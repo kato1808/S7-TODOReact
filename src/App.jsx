@@ -1,35 +1,23 @@
-import { StrictMode, useState } from "react";
-import ColorfulMessage from "./components/ColorfulMessage";
+import { StrictMode } from "react";
 
-const App = () => {
-  const [num, setNum] = useState(0);
-  const [faceShowflag, setFaceShowflag] = useState(true);
-
-  const onClickCountup = () => {
-    setNum(num + 1);
-  };
-  const onClickSwitchShowFlag = () => {
-    setFaceShowflag(!faceShowflag);
-  };
-
-  if (num % 3 === 0) {
-    faceShowflag || setFaceShowflag(true);
-  } else {
-    faceShowflag && setFaceShowflag(false);
-  }
-
+export const App = () => {
   return (
     <>
-      <h1 style={{ color: "red" }}>こんにちは</h1>
-      <ColorfulMessage color="blue">お元気ですか</ColorfulMessage>
-      <ColorfulMessage color="pink">元気です</ColorfulMessage>
-      <button onClick={onClickCountup}>カウントアップ</button>
-      <br />
-      <button onClick={onClickSwitchShowFlag}>on/off</button>
-      <p>{num}</p>
-      {faceShowflag && <p>lallrkgk</p>}
+      <div>
+        <input placeholder="TODOを入力" />
+        <button>追加</button>
+      </div>
+      <div>
+        <p>未完了のTODO</p>
+        <ul>
+          <div>
+            <li>ああああああああああ</li>
+            <button>完了</button>
+            <button>削除</button>
+          </div>
+        </ul>
+      </div>
+      <div></div>
     </>
   );
 };
-
-export default App;
